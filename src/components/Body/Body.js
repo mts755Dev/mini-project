@@ -1,46 +1,42 @@
-import React, { Component } from 'react';
 import './Body.css';
 
+const Body = (props) => {
+   let ingredient = null;
 
-class Body extends Component {
-  render() {
-    let ingredient =null;
+   switch (props.type) {
+   case('bread-bottom'):
+      ingredient = <div className='BreadBottom'></div>;
+      break;
 
-    switch (this.props.type) {
-            case('bread-bottom'):
-               ingredient =<div className='BreadBottom'>&emsp;</div>;
-               break;
+   case('bread-top'):
+      ingredient = (
+         <div className='BreadTop'>
+            <div className='Seeds1'></div>
+            <div className='Seeds2'></div>
+         </div>
+         );
+      break;
 
-            case('bread-top'):
-               ingredient =(<div className='BreadTop'>&emsp;
-                            <div className='Seeds1'>&emsp;</div>
-                            <div className='Seeds2'>&emsp;</div>
+   case('meat'):
+      ingredient = <div className='Meat'></div>;
+      break;
 
-                            </div>
-                           );
-               break;
+   case('cheese'):
+      ingredient = <div className='Cheese'></div>;
+      break;
 
-            case('meat'):
-               ingredient =<div className='Meat'>&emsp;</div>;
-               break;
+   case('bacon'):
+      ingredient = <div className='Bacon'></div>;
+      break;
 
-            case('cheese'):
-               ingredient =<div className='Cheese'>&emsp;</div>;
-               break;
+   case('lettuce'):
+      ingredient = <div className='Lettuce'></div>;
+      break;
 
-            case('bacon'):
-               ingredient =<div className='Bacon'>&emsp;</div>;
-               break;
-
-            case('lettuce'):
-               ingredient =<div className='Lettuce'>&emsp;</div>;
-               break;
-
-            default:
-               ingredient =null;
-    }
-    return ingredient;
-  }
+   default:
+      ingredient =null;
+   }
+   return ingredient;
 }
 
 export default Body;
