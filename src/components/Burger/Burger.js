@@ -6,6 +6,7 @@ const burger = (props) => {
     let updatedIngredients = [];
     let ifEmpty = 'No Ingredients Added';
 
+     // eslint-disable-next-line array-callback-return
      props.ingredients.map(ingredient => {
         for(let i=1; i<=ingredient.qty ; i++)
             {updatedIngredients.push( <Body type= {ingredient.name} />)}
